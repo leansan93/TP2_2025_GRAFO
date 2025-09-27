@@ -9,6 +9,10 @@ public class Usuario {
 	
 	
 	public Usuario( String nombre , Integer  Interes_tango , Integer Interes_rockNacional, Integer Interes_Folclore , Integer Interes_Urbano) {
+		// aseguro que el nombre sea valido 
+		if (!nombreValido(nombre) ) {
+			 throw new IllegalArgumentException("El nombre ingresado no es válido.");
+		}
 		this.nombre= nombre;
 		this.Interes_rockNacional = Interes_rockNacional;
 		this.Interes_Folclore= Interes_Folclore;
@@ -25,6 +29,11 @@ public class Usuario {
 			   Math.abs(Interes_Urbano - Usuariosegundo.getInteres_Urbano());
 	}
 
+	// se fija que el nombre sea valido y no tenga solo numeros o signos raros 
+	private boolean nombreValido (String nombre ) {
+		return nombre.matches(".*[a-zA-Z].*") && nombre.matches("[a-zA-Z\\s]+");
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}

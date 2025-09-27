@@ -3,8 +3,10 @@ package Negocio;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Grafo {
-	
+	// creo lista de usuarios y de aristas para el grafo 
 	List <Usuario> _Usuarios;
 	List <Arista> _Aristas;
 	
@@ -14,13 +16,23 @@ public class Grafo {
 		this._Aristas= new ArrayList<>();
 	}
 	
-	
+	// agrega usuario asegurandoce de que el usuario no este repetido 
 	public void agregarUsuario(Usuario usuario) {
+		
 		
 		_Usuarios.add(usuario);
 		
 	}
+	
 
+	
+
+	//// nota poner otro para el nombre que seria algo asi como un nombre valido para que no 
+	// se ingrese numeros 
+	
+	
+	
+	
 	public List<Usuario> getUsuario(){
 		return _Usuarios;
 	}
@@ -40,7 +52,9 @@ public class Grafo {
 		_Usuarios= usuario;
 	}
 	
-	// generar aristas con peso todos los pares de usuarios con su peso 
+	// generar aristas con peso todos los pares de usuarios con su peso
+	// esto se crea cuando se agrega a la lista de usuarios que seria el vertice 
+	// y este se genera de manera automatica dando la union de los dos usuarios generando el peso de la arista
 	public void generarAristas() {
 
 		for (int i = 0 ; i < _Usuarios.size() ; i ++ ) {
