@@ -1,6 +1,10 @@
 package Negocio;
 
 public class Kruskal {
-	// se usa despues de gnererar el arbol generador minimo con kruskal para separar los 2 grupos  
+	// se encarga de : 
+	// Tomar todas las aristas del grafo.
+	// Ordenarlas por peso (ascendente).
+	// Usar Union-Find para ir agregando las que no generen ciclos.
+	// Construir el Árbol Generador Mínimo (MST) como resultado (lista de aristas).
 
 }
