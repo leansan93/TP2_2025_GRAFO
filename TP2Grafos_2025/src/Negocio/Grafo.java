@@ -17,7 +17,7 @@ public class Grafo {
 	}
 	
 	// agrega usuario asegurandoce de que el usuario no este repetido 
-	public void agregarUsuario(Usuario usuario) {
+	public void agregarUsuarios(Usuario usuario) {
 		
 		
 		_Usuarios.add(usuario);
@@ -33,7 +33,7 @@ public class Grafo {
 	
 	
 	
-	public List<Usuario> getUsuario(){
+	public List<Usuario> getUsuarios(){
 		return _Usuarios;
 	}
 
@@ -48,7 +48,7 @@ public class Grafo {
 	}
 
 
-	public void setUsuario(List<Usuario> usuario) {
+	public void setUsuarios(List<Usuario> usuario) {
 		_Usuarios= usuario;
 	}
 	
