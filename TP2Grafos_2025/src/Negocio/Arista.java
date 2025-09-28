@@ -1,5 +1,8 @@
 package Negocio;
 
+
+// clase arista para ver y crear las aristas que lo usa la clase Grafo 
+ 
 public class Arista  implements Comparable<Arista> {
 	private Integer peso;
 	private Usuario u1;

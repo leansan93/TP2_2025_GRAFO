@@ -68,8 +68,8 @@ public class Grafo {
 
 		for (int i = 0 ; i < _Usuarios.size() ; i ++ ) {
 			for (int j = i + 1 ; j < _Usuarios.size() ; j ++ ) {
-				Usuario u1= _Usuarios.get(i);
-				Usuario u2 = _Usuarios.get(j);
+				Usuario u1= _Usuarios.get(i); // creo el usuario 1 
+				Usuario u2 = _Usuarios.get(j); // creo el usuario 2 
 				
 				int peso = u1.CalcularSimilaridad(u2); // aqui se agrega el peso con calcular similaridad
 				
