@@ -16,16 +16,25 @@ public class Grafo {
 		this._Aristas= new ArrayList<>();
 	}
 	
-	// agrega usuario asegurandoce de que el usuario no este repetido 
+	// agrega usuario que no este registrado  o no este en la lista 
 	public void agregarUsuarios(Usuario usuario) {
 		
-		
+		if (!existeUsuario(usuario)) {
 		_Usuarios.add(usuario);
-		
+		}
 	}
 	
 
 	
+// me aseguro que el usuario que se va a agregar no este en la lista 
+	private boolean existeUsuario(Usuario usuario) {
+		 for (int i = 0 ; i < _Usuarios.size() ; i ++ ) {
+			 if (!_Usuarios.get(i).getNombre().equals(usuario.getNombre())) {
+				 return true;
+			 }
+		 }
+		return false;
+	}
 
 	//// nota poner otro para el nombre que seria algo asi como un nombre valido para que no 
 	// se ingrese numeros 
@@ -62,7 +71,7 @@ public class Grafo {
 				Usuario u1= _Usuarios.get(i);
 				Usuario u2 = _Usuarios.get(j);
 				
-				int peso = u1.CalcularSimilaridad(u2);
+				int peso = u1.CalcularSimilaridad(u2); // aqui se agrega el peso con calcular similaridad
 				
 				_Aristas.add(new Arista(u1, u2 , peso));
 			}
