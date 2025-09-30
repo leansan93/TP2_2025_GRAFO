@@ -16,6 +16,8 @@ import Negocio.Usuario;
 
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 
@@ -52,7 +54,7 @@ public class interfazGrafo {
 	 */
 	private void initialize() {
 		String [] ValoresCmbox= {"1","2","3","4","5"};  // valores del combobox
-		
+		Grafo grafo = new Grafo();
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 479, 439);
@@ -130,12 +132,12 @@ public class interfazGrafo {
 		cmboxGeneroUrbano.setModel(new DefaultComboBoxModel<>(ValoresCmbox));
 		frame.getContentPane().add(cmboxGeneroUrbano);
 //----------------------------------------------------------------------------------		
-		// BOTON CREAR USUARIO 
+		// BOTONES Y SUS ACCIONS PERFOMAND 
 		JButton btnCrearUsuario = new JButton("crear usuario");
 		btnCrearUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnCrearUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Grafo grafo = new Grafo();
+				
 				String nombre = textNombre.getText();
 				int interesTango = Integer.parseInt((String) cmboxTango.getSelectedItem());
 				int interesRockNacional= Integer.parseInt((String) cmboxRcokNacional.getSelectedItem());
@@ -154,14 +156,29 @@ public class interfazGrafo {
 		frame.getContentPane().add(btnCrearUsuario);
 		
 		JButton btnConfirmar = new JButton("confirmar");
+		btnConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			  grafo.generarAristas();
+			  
+				
+				
+				
+			}
+		});
 		btnConfirmar.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnConfirmar.setBounds(142, 366, 147, 23);
 		frame.getContentPane().add(btnConfirmar);
 		
-		JTextArea txtrCreeLosUsuarios = new JTextArea();
-		txtrCreeLosUsuarios.setText("cree los usuarios y luego para que se formen los\r\ngrupos por afinidades musicales clickee en confirmar");
-		txtrCreeLosUsuarios.setBounds(21, 41, 432, 42);
-		frame.getContentPane().add(txtrCreeLosUsuarios);
+		
+		///----------------------------------------------------------------------------
+		// Informacion de como usar la app con el JTextArea 
+		JTextArea txtrInformaciondelaApp = new JTextArea();
+		txtrInformaciondelaApp.setText("cree los usuarios y luego para que se formen"
+		+ "los\r\ngrupos por afinidades musicales clickee en confirmar");
+		txtrInformaciondelaApp.setBounds(21, 41, 432, 42);
+		frame.getContentPane().add(txtrInformaciondelaApp);
+		
+		
 		
 		
 	}
