@@ -1,5 +1,7 @@
 package Negocio;
 
+import java.util.Objects;
+
 public class Usuario {
 	private String nombre;
 	private Integer Interes_tango;
@@ -74,5 +76,18 @@ public class Usuario {
 		Interes_Urbano = interes_Urbano;
 	}
 
+	 public int hashCode() {
+	        return Objects.hash(nombre);
+	    }
+
+	@Override
+	public String toString() {
+	   return "Usuario{" + 
+			   "nombre: " + nombre +  ",  " + 
+			   "tango: " + Interes_tango + ",  "+ 
+			   "rock nacional : "+Interes_rockNacional +", " +
+			   " Folclore: " + Interes_Folclore+ ", "+
+			   " genUrbano: " +  Interes_Urbano + '}';
+	    }
 
 }
