@@ -182,7 +182,7 @@ public class interfazGrafo {
 		txtrInformaciondelaApp.setBounds(21, 41, 432, 42);
 		frame.getContentPane().add(txtrInformaciondelaApp);
 		
-		
+		txtrInformaciondelaApp.setEditable(false);
 		
 		
 	}
