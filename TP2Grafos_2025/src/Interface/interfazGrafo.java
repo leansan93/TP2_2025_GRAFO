@@ -147,7 +147,8 @@ public class interfazGrafo {
 				grafo.agregarUsuarios(usuario);
 				
 				
-				System.out.println(usuario.toString());
+				// solo para ver que se crearon los usuarios 
+				//System.out.println(usuario.toString());
 			}
 		});
 		
@@ -160,6 +161,9 @@ public class interfazGrafo {
 			public void actionPerformed(ActionEvent e) {
 			  grafo.generarAristas();
 			  
+			  VentanaGrupos ventanaGrupos= new VentanaGrupos(frame);
+			  ventanaGrupos.setVisible(true);
+			 
 				
 				
 				
@@ -180,6 +184,11 @@ public class interfazGrafo {
 		
 		
 		
+		
+	}
+
+	protected static void DISPOSE_ON_CLOSE() {
+		// TODO Auto-generated method stub
 		
 	}
 }
