@@ -25,7 +25,11 @@ public class interfazGrafo {
 
 	private JFrame frame;
 	private JTextField textNombre;
-
+	private List<Usuario> _ListaGrupo1;
+	private List<Usuario> _ListaGrupo2;
+	
+    private	Grafo grafo;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -46,6 +50,10 @@ public class interfazGrafo {
 	 * Create the application.
 	 */
 	public interfazGrafo() {
+		this.grafo= new Grafo();
+		this._ListaGrupo1= new ArrayList<Usuario>();
+		this._ListaGrupo2= new ArrayList<Usuario>();
+		
 		initialize();
 	}
 
@@ -54,8 +62,7 @@ public class interfazGrafo {
 	 */
 	private void initialize() {
 		String [] ValoresCmbox= {"1","2","3","4","5"};  // valores del combobox
-		Grafo grafo = new Grafo();
-		
+		 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 479, 439);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -161,7 +168,7 @@ public class interfazGrafo {
 			public void actionPerformed(ActionEvent e) {
 			  grafo.generarAristas();
 			  
-			  VentanaGrupos ventanaGrupos= new VentanaGrupos(frame);
+			  VentanaGrupos ventanaGrupos= new VentanaGrupos();
 			  ventanaGrupos.setVisible(true);
 			 
 				
