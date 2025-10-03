@@ -19,8 +19,12 @@ public class Grafo {
 	// agrega usuario que no este registrado  o no este en la lista 
 	public void agregarUsuarios(Usuario usuario) {
 		
-		if (!existeUsuario(usuario)) {
+		if (existeUsuario(usuario)) {
+			throw new IllegalArgumentException("el usuario existe ingrese otro usuario con otro nombre ");
+		}
+		else {
 		_Usuarios.add(usuario);
+	
 		}
 	}
 	
@@ -29,7 +33,7 @@ public class Grafo {
 // me aseguro que el usuario que se va a agregar no este en la lista 
 	private boolean existeUsuario(Usuario usuario) {
 		 for (int i = 0 ; i < _Usuarios.size() ; i ++ ) {
-			 if (!_Usuarios.get(i).getNombre().equals(usuario.getNombre())) {
+			 if (_Usuarios.get(i).getNombre().equals(usuario.getNombre())) {
 				 return true;
 			 }
 		 }

@@ -1,6 +1,8 @@
 package Negocio;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Usuario {
 	private String nombre;
@@ -15,7 +17,9 @@ public class Usuario {
 		if (!nombreValido(nombre) ) {
 			 throw new IllegalArgumentException("El nombre ingresado no es v·lido.");
 		}
+		else {
 		this.nombre= nombre;
+		}
 		this.Interes_rockNacional = Interes_rockNacional;
 		this.Interes_Folclore= Interes_Folclore;
 		this.Interes_tango= Interes_tango;
@@ -32,9 +36,14 @@ public class Usuario {
 	}
 
 	// se fija que el nombre sea valido y no tenga solo numeros o signos raros 
-	private boolean nombreValido (String nombre ) {
-		return nombre.matches(".*[a-zA-Z].*") && nombre.matches("[a-zA-Z\\s]+");
-	}
+	public boolean nombreValido (String nombre ) {
+	    // ValidaciÛn contra null o vacÌo
+	    if (nombre == null || nombre.trim().isEmpty()) {
+	        return false;
+	    }
+	    // Solo letras y espacios
+	    return nombre.matches("[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—\\s]+");
+	 }
 	
 	public String getNombre() {
 		return nombre;
