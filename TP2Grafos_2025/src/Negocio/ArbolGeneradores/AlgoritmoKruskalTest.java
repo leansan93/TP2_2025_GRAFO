@@ -36,7 +36,7 @@ public class AlgoritmoKruskalTest {
 	
 
 	@Test
-	public void testMostrarArbolGeneradorMinimo() {
+	public void testMostrarArbolGeneradorMinimoOK() {
 		AlgoritmoKruskal kruskal = new AlgoritmoKruskal();
 		List <Arista> mst = new ArrayList <Arista>();
 		
