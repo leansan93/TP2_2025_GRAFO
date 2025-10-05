@@ -19,7 +19,7 @@ public class Grafo {
 	// agrega usuario que no este registrado  o no este en la lista 
 	public void agregarUsuarios(Usuario usuario) {
 		
-		if (existeUsuario(usuario)) {
+		if (existeUsuario(usuario) ) {
 			throw new IllegalArgumentException("el usuario existe ingrese otro usuario con otro nombre ");
 		}
 		else {

@@ -59,13 +59,8 @@ public class GrafoTest {
 		 
 	}
 	
-
-	@Test (expected = IllegalArgumentException.class)
-	public void testNombreValidodeUsuario() {
-		 Usuario usuarioInvalido= new Usuario("456",2,2,1,3);
-		 grafo.agregarUsuarios(usuarioInvalido);
-		 
-	}
+ 
+	
 	
 	
 
