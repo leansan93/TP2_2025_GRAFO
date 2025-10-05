@@ -49,13 +49,15 @@ public class GrafoTest {
 	@Test
 	public  void generarAristaOk() {
 		Usuario usu1= new Usuario("xoxo", 1 ,2,5,4);
-		Usuario usu2=  new Usuario("ululul",2,5,4,1);;
+		Usuario usu2=  new Usuario("ululul",2,5,4,1);
 		grafo.agregarUsuarios(usu1);
 		grafo.agregarUsuarios(usu2);
 		grafo.generarAristas();
 		Arista arista = grafo.getAristas().get(0);
 		Integer esperado = usu1.CalcularSimilaridad(usu2) ;
 		assertEquals(esperado, arista.getPeso());
+		Integer resultadoEsperadodeSimilaridad= 8;
+		assertEquals( resultadoEsperadodeSimilaridad , esperado);
 		 
 	}
 	
