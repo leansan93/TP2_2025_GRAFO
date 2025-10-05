@@ -26,7 +26,7 @@ public class GrafoTest {
 
 	
 	@Test 
-	public void testAgregarUsuariosOK_SinRepetirUsuario() throws Exception{
+	public void testAgregarUsuariosOK_SinRepetirUsuarioyAristaOK() throws Exception{
 		Grafo grafoPrueba= new Grafo();
 		grafoPrueba.agregarUsuarios(usu3);
 		grafoPrueba.agregarUsuarios(usu4);
@@ -34,6 +34,16 @@ public class GrafoTest {
 	    assertTrue(grafoPrueba.getUsuarios().contains(usu3));
 	    assertTrue(grafoPrueba.getUsuarios().contains(usu4));
 	
+	}
+	@Test 
+	public void testAgregarUsuariosAristaIncorrectadaFalse() throws Exception{
+		Grafo grafoPrueba= new Grafo();
+		grafoPrueba.agregarUsuarios(usu3);
+		grafoPrueba.agregarUsuarios(usu4);
+		assertEquals(2, grafoPrueba.getUsuarios().size());
+	    assertFalse(grafoPrueba.getUsuarios().contains(usuario)); // usuario nunca se agrega da False
+	    assertFalse(grafoPrueba.getUsuarios().contains(usu5)); // da false nunca se agrega usu5
+	    assertFalse(grafoPrueba.getUsuarios().contains(usu2)); // nunca se agrega usu2 da false
 	}
 
 	@Test (expected = IllegalArgumentException.class)
